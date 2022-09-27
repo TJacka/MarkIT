@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "MarkIT",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "The Ultimate Swipe File",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
