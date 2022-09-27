@@ -8,7 +8,7 @@
 
 <br>
 
-<img src="https://i.ibb.co/BZDcc5W/project.jpg" border="0">
+<img src="https://i.ibb.co/q7SQZB5/mark-IThero.jpg" border="0">
 
 <br>
 
@@ -28,8 +28,6 @@ Signup, Login, Upload Swipes, Global Swipe Feed
   
 Personal Swipes, Favorite Global Swipes, Organize swipes by category
   
-</div>" border="0">
-
 <br>
 
 # Installation Process
