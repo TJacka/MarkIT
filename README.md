@@ -1,4 +1,38 @@
-# Install
+<div align="center">
+
+# MarkIT - The Ultimate Marketing Swipe File
+
+<br>
+
+**Link to live project:** https://tjacka.github.io/BrowserMe/
+
+<br>
+
+<img src="https://i.ibb.co/BZDcc5W/project.jpg" border="0">
+
+<br>
+
+## Tech Used: 
+  
+HTML, CSS, JavaScript, Bootstrap, Node, Express, MongoDB, Cloudinary. 
+
+<br> 
+
+## Standard Features:
+
+Signup, Login, Upload Swipes, Global Swipe Feed
+
+<br>
+  
+## Future Optimizations:
+  
+Personal Swipes, Favorite Global Swipes, Organize swipes by category
+  
+</div>" border="0">
+
+<br>
+
+# Installation Process
 
 `npm install`
 
