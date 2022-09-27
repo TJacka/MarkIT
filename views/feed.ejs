@@ -1,4 +1,4 @@
-<%- include('partials/header') -%>
+<%- include('partials/headerauthin') -%>
 
   <div class="container card-container">
     <h1 class="mb-4" style="margin-top: -2rem;">Top Swipes From Around The Globe</h1>
@@ -13,9 +13,9 @@
             <!-- <p class="card-text"><i class="px-1 bi bi-heart"></i><%= posts[i].likes.length - 1 %></p> -->
             <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary">View Swipe</a>
           </div>
-          <!-- <div class="card-footer">
+          <div class="card-footer">
             <span class="badge bg-primary"><%= posts[i].category%></span>
-          </div> -->
+          </div>
         </div>
       </div>
     <% } %>
