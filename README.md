@@ -4,7 +4,7 @@
 
 <br>
 
-**Link to live project:** https://tjacka.github.io/BrowserMe/
+**Link to live project:** **Coming soon!**
 
 <br>
 
@@ -38,7 +38,7 @@ Personal Swipes, Favorite Global Swipes, Organize swipes by category
 
 # Things to add
 
-- Create a `.env` file in config folder and add the following as `key = value`
+  - Create a `.env` file in config folder and add the following as `key = value`
   - PORT = 2121 (can be any port example: 3000)
   - DB_STRING = `your database URI`
   - CLOUD_NAME = `your cloudinary cloud name`
