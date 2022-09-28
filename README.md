@@ -10,7 +10,7 @@ Link to live project: https://markit.up.railway.app/
   
 ## Try it with:
   
-### Username: test1234@test1234.com  Password: test1234
+### Username: test1234@test1234.com Password: test1234
 
 <img src="https://i.ibb.co/q7SQZB5/mark-IThero.jpg" border="0">
 
