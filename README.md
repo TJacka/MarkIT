@@ -4,7 +4,7 @@
 
 <br>
 
-  **Link to live project:** <a href="https://markit.up.railway.app/" target="_blank" />
+  **Link to live project:** <a href="https://markit.up.railway.app/" target="_blank" />https://markit.up.railway.app/</a>
 
 <br>
   
