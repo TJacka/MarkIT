@@ -4,7 +4,7 @@
 
 <br>
 
-**Link to live project: https://markit.up.railway.app/
+Link to live project: https://markit.up.railway.app/
 
 <br>
   
