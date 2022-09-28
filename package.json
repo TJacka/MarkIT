@@ -4,8 +4,7 @@
   "description": "The Ultimate Swipe File",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
-    "prod": "npm run start",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
