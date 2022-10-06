@@ -38,10 +38,6 @@ Personal Swipes, Favorite Global Swipes, Organize swipes by category
 
 `npm install`
 
-`npm install express`
-  
-`npm install mongoose`
-
 ---
 
 # Things to add
