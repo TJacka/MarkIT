@@ -11,6 +11,15 @@ exports.getLogin = (req, res) => {
   });
 };
 
+exports.getHome = (req, res) => {
+  if (req.user) {
+    return res.render("home.ejs", { user: req.user });
+  }
+  res.render("/", {
+    title: "index",
+  });
+};
+
 exports.postLogin = (req, res, next) => {
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
