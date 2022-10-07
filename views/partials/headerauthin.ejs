@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body class="d-flex h-100">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: #ffff">
+    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top  shadow" style="background-color: rgb(252, 252, 252)">
         <div class="container">
           <a class="navbar-brand" href="/feed">
             <img src="../mark.png" alt="" width="75" height="75">
@@ -36,11 +36,13 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-              <h3 class="navbar-text mx-auto">Welcome back, <%= user.userName %></h3>
-              <a class="nav-link h6 active" aria-current="page" href="/feed">Top Swipes</a>
-              <a class="nav-link h6" href="/profile">Add Swipe</a>
-              <a href="/logout" class="btn btn-danger btn-nav mx-5 mb-2" role="button">Logout</a>
+          <div class="collapse navbar-collapse justify-content-end mt-1" id="navbarSupportedContent">
+              <h4 class="navbar-text mx-auto mt-1" style="font-weight: 600;">Welcome back, <%= user.userName %></h4>              
+              <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem;" aria-current="page" href="/feed">Top Swipes</a>
+              <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem;" aria-current="page" href="/feed">Fav Swipes</a>
+              <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem;" aria-current="page" href="/feed">My Swipes</a>
+              <a class="nav-link" style="font-weight: 700; font-size: 1.1rem;" href="/profile">Add Swipe</a>
+              <a href="/logout" class="btn btn-danger btn-nav mx-5" role="button">Logout</a>
           </div>
         </div>
       </nav>

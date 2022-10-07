@@ -11,8 +11,12 @@ body {
   }
 
 .card-container{
-  margin-top: 10rem;  
+  margin-top: 8rem;  
 }
+
+.card-container-lg{
+    margin-top: 8rem;  
+  }
 
 .page-header {
     margin-top: 4rem;
