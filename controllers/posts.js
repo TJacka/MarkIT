@@ -3,10 +3,10 @@ const Post = require("../models/Post");
 const User = require("../models/User");
 
 module.exports = {
-  getProfile: async (req, res) => {
+  addSwipe: async (req, res) => {
     try {
       const posts = await Post.find({ user: req.user.id });
-      res.render("profile.ejs", { posts: posts, user: req.user });
+      res.render("addswipe.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -14,7 +14,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ likes: "desc" }).lean();
-      res.render("swipes.ejs", { posts: posts, user: req.user });
+      res.render("topswipes.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -38,7 +38,7 @@ module.exports = {
   getUserSwipes: async (req, res) => {
     try {
       const posts = await Post.find().sort({ likes: "desc" }).lean();
-      res.render("userswipes.ejs", { posts: posts, user: req.user });
+      res.render("myswipes.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }

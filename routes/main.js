@@ -8,11 +8,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Main Routes - simplified for now
 router.get("/", homeController.getIndex);
 router.get("/home", ensureAuth, authController.getHome);
-router.get("/profile", ensureAuth, postsController.getProfile);
-router.get("/feed", ensureAuth, postsController.getFeed);
-router.get("/freefeed", ensureGuest, postsController.getFreeFeed);
+router.get("/addswipe", ensureAuth, postsController.addSwipe);
+router.get("/topswipes", ensureAuth, postsController.getFeed);
+router.get("/freeswipes", ensureGuest, postsController.getFreeFeed);
 router.get("/favswipes", ensureAuth, postsController.getFavSwipes);
-router.get("/userswipes", ensureAuth, postsController.getUserSwipes);
+router.get("/myswipes", ensureAuth, postsController.getUserSwipes);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
