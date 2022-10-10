@@ -1,9 +1,10 @@
 <%- include('partials/headerauthin') -%>
+
 <div class="container card-container">
-  <div class="row justify-content-center mt-5">
-      <div class="col-6 mt-5">
-          <div>
-            <h2 class="mb-4" style="font-weight: 700;">Add a swipe</h2>
+  <div class="row justify-content-center mt-4">
+      <div class="col-6">
+          <div class="p-4 p-md-5 border rounded-3 bg-light" style="box-shadow: 0 0 30px rgb(169, 169, 169);">
+            <h1 class="mb-4" style="font-weight: 700;">Add a swipe</h1>
             <form action="/post/createPost" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
                   <label for="title" class="form-label">Swipe Title</label>

@@ -14,7 +14,31 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ likes: "desc" }).lean();
-      res.render("feed.ejs", { posts: posts, user: req.user });
+      res.render("swipes.ejs", { posts: posts, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getFreeFeed: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ likes: "desc" }).lean();
+      res.render("freeswipes.ejs", { posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getFavSwipes: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ likes: "desc" }).lean();
+      res.render("favswipes.ejs", { posts: posts, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getUserSwipes: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ likes: "desc" }).lean();
+      res.render("userswipes.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }

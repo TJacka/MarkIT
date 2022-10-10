@@ -22,24 +22,26 @@
     />
     <link rel="stylesheet" href="/css/style.css" />
   </head>
-  <body class="d-flex h-100">
+  <body class="d-flex h-100s">
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
       <nav class="navbar navbar-expand-lg navbar-light fixed-top  shadow" style="background-color: rgb(255, 255, 255)">
         <div class="container">
-          <a class="navbar-brand" href="/home">
-            <img src="../mark.png" alt="" width="75" height="75">
+          <a class="navbar-brand p-0" href="/home">
+            <img src="../mark.png" alt="" width="65" height="65">
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end mt-1" id="navbarSupportedContent">
-              <h4 class="navbar-text mx-auto mt-1" style="font-weight: 600;">Welcome back, <%= user.userName %></h4>              
-              <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem;" aria-current="page" href="/feed">Top Swipes</a>
-              <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem;" aria-current="page" href="/feed">Fav Swipes</a>
-              <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem;" aria-current="page" href="/feed">My Swipes</a>
-              <a class="nav-link" style="font-weight: 700; font-size: 1.1rem;" href="/profile">Add Swipe</a>
-              <a href="/logout" class="btn btn-danger btn-nav mx-5" role="button">Logout</a>
-          </div>
+          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+              <h4 class="navbar-text mt-2" style="font-weight: 600;  text-align: center;">Welcome back, <%= user.userName %></h4>              
+              <div class="flex collapse navbar-collapse justify-content-end">
+                <a class="nav-link" style="font-weight: 700; font-size: 1.1rem; text-align: center;" href="/profile">Add Swipe</a>
+                <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem; text-align: center;" aria-current="page" href="/userswipes">My Swipes</a>
+                <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem; text-align: center;" aria-current="page" href="/favswipes">Fav Swipes</a>
+                <a class="nav-link active" style="font-weight: 700; font-size: 1.1rem; text-align: center;" aria-current="page" href="/feed">Top Swipes</a>
+                <a href="/logout" class="btn btn-danger btn-nav" role="button" style="margin-left: 1rem;">Logout</a>
+              </div>
+            </div>
         </div>
       </nav>
   </body>
