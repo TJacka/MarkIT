@@ -22,7 +22,7 @@ module.exports = {
   getFreeFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ likes: "desc" }).lean();
-      res.render("freeswipes.ejs", { posts: posts });
+      res.render("guestswipes.ejs", { posts: posts });
     } catch (err) {
       console.log(err);
     }

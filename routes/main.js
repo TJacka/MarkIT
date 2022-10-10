@@ -10,7 +10,7 @@ router.get("/", homeController.getIndex);
 router.get("/home", ensureAuth, authController.getHome);
 router.get("/addswipe", ensureAuth, postsController.addSwipe);
 router.get("/topswipes", ensureAuth, postsController.getFeed);
-router.get("/freeswipes", ensureGuest, postsController.getFreeFeed);
+router.get("/guestswipes", ensureGuest, postsController.getFreeFeed);
 router.get("/favswipes", ensureAuth, postsController.getFavSwipes);
 router.get("/myswipes", ensureAuth, postsController.getUserSwipes);
 router.get("/login", authController.getLogin);
