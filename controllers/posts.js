@@ -65,7 +65,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Post has been added!");
-      res.redirect("/feed");
+      res.redirect("/topswipes");
     } catch (err) {
       console.log(err);
     }
@@ -93,9 +93,9 @@ module.exports = {
       // Delete post from db
       await Post.remove({ _id: req.params.id });
       console.log("Deleted Post");
-      res.redirect("/feed");
+      res.redirect("/topswipes");
     } catch (err) {
-      res.redirect("/feed");
+      res.redirect("/topswipes");
     }
   },
 };
