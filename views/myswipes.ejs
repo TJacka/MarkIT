@@ -41,7 +41,9 @@
               </div>
             <!-- <p class="card-text"><i class="px-1 bi bi-heart"></i><%= posts[i].likes.length - 1 %></p> -->
             <hr style="margin-top: -1px;">
-            <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary px-4" style="border-radius: 8px;">View Swipe</a>
+            <div class="d-flex justify-content-center">
+              <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary px-4" id="btn-viewswipe" style="border-radius: 8px;">View Swipe</a>
+            </div>
           </div>
           <div class="card-footer">
             <span class="badge bg-success"><%= posts[i].category%>Likes: <%= posts[i].likes%></span>
