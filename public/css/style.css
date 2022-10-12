@@ -63,7 +63,7 @@ body {
   background: rgb(234, 57, 44);
   color: white;
   border-radius: 5px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 7px 20px;
   font-size: 1.2rem;
 }
@@ -85,7 +85,7 @@ body {
 }
 
 #btn-login:hover {
-  box-shadow: 0 0 15px silver;
+  box-shadow: 0 0 10px rgb(150, 150, 150);
   border: 1px solid rgb(124, 92, 218);
 }
 
@@ -102,7 +102,8 @@ body {
 
 .nav-link {
   color: black;
-  border-radius: 5px;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
 .nav-link:hover {
@@ -110,7 +111,40 @@ body {
   border: 1px solid rgb(85, 49, 190);
   color: white;
   box-shadow: 0 0 10px silver;
-  border-radius: 5px;
+  border-radius: 4px;
   padding: 5px 12px;
   margin: 0 3px;
+}
+
+#btn-loginpage {
+  background: rgb(124, 92, 218);
+  color: white;
+}
+
+#btn-loginpage:hover {
+  background: rgb(85, 49, 190);
+  color: white;
+}
+
+#btn-viewswipe {
+  background: white;
+  color: rgb(85, 49, 190);
+  font-weight: 600;
+  border: 1px solid rgb(85, 49, 190);
+}
+
+#btn-viewswipe:hover {
+  background: rgb(85, 49, 190);
+  color: white;
+}
+
+#btn-guest {
+  border: 1px solid rgb(238, 180, 168); 
+  background: white;
+}
+
+#btn-guest:hover {
+  border: 1px solid rgb(85, 49, 190); 
+  background: rgb(85, 49, 190);
+  color: white;
 }
