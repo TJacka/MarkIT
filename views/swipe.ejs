@@ -4,17 +4,17 @@
   <div class="flex"> 
     <div class="d-flex justify-content-between">
       <div class="col-3">
-        <h1 style="font-weight: 700;"><%= post.title %></h1>
+        <h1 style="font-weight: 800;"><%= post.title %></h1>
         <p>By: <%= user.userName %></p>
       </div>
-      <p style="font-weight: 900; font-size: 1.3rem; margin-top: 1rem; text-align: center;"><%= post.caption %></p>
+      <p style="font-weight: 600; font-size: 1.3rem; margin-top: 1rem; text-align: center;"><%= post.caption %></p>
       <div class="col-3">
         <div class="d-flex">
           <form style="margin-left: auto;" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-            <button class="btn btn-primary mx-1" title="Like Swipe" style="font-size: 1.2rem; font-family: 'Open Sans', sans-serif;" type="submit"><i class="bi bi-hand-thumbs-up" style="font-style: normal; font-weight: 500;"> <%= post.likes %></i></button>
+            <button class="btn mx-1" id="btn-signup" title="Like Swipe" style="font-size: 1.2rem; font-family: 'Open Sans', sans-serif;" type="submit"><i class="bi bi-hand-thumbs-up" style="font-style: normal; font-weight: 500;"> <%= post.likes %></i></button>
           </form>
           <form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
-            <button class="btn btn-primary mx-1" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"><i class="bi bi-star"> <%= post.fav %></i></button>
+            <button class="btn mx-1" id="btn-signup" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"><i class="bi bi-star"> <%= post.fav %></i></button>
           </form>
           <%if(post.user == user.id){ %>
           <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
