@@ -52,6 +52,7 @@ body {
 #btn-head {
   border: 1px solid rgb(238, 180, 168);
   color: black;
+  background: white;
 }
 
 #btn-head:hover {
@@ -80,16 +81,18 @@ body {
   color: rgb(124, 92, 218); 
   border: 1px solid rgb(124, 92, 218);
   background: white;
+  font-weight: 600;
 }
 
 #btn-login:hover {
-  box-shadow: 0 0 10px silver;
+  box-shadow: 0 0 15px silver;
   border: 1px solid rgb(124, 92, 218);
 }
 
 #btn-signup {
   background: rgb(124, 92, 218); 
   color: white;
+  font-weight: 600;
 }
 
 #btn-signup:hover {
@@ -97,3 +100,17 @@ body {
   color: white;
 }
 
+.nav-link {
+  color: black;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background: rgb(85, 49, 190);
+  border: 1px solid rgb(85, 49, 190);
+  color: white;
+  box-shadow: 0 0 10px silver;
+  border-radius: 5px;
+  padding: 5px 12px;
+  margin: 0 3px;
+}
