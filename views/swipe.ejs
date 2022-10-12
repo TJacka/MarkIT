@@ -3,41 +3,29 @@
 <div class="container card-container">
   <div class="flex"> 
     <div class="d-flex justify-content-between">
-      <div class="col-md-6">
+      <div class="col-3">
         <h1 style="font-weight: 700;"><%= post.title %></h1>
-        <p><%= post.caption %></p>
         <p>By: <%= user.userName %></p>
       </div>
-      <div class="col-1">
+      <p style="font-weight: 900; font-size: 1.3rem; margin-top: 1rem; text-align: center;"><%= post.caption %></p>
+      <div class="col-3">
         <div class="d-flex">
-          <form
-            class="col-10"
-            action="/post/likePost/<%= post.id %>?_method=PUT"
-            method="POST"
-          >
-            <button class="btn btn-primary fa fa-thumbs-up p-3" title="Like Post" style="font-size: 1.2rem;" type="submit"> <%= post.likes %></button>
+          <form style="margin-left: auto;" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+            <button class="btn btn-primary mx-1" title="Like Swipe" style="font-size: 1.2rem; font-family: 'Open Sans', sans-serif;" type="submit"><i class="bi bi-hand-thumbs-up" style="font-style: normal; font-weight: 500;"> <%= post.likes %></i></button>
           </form>
-          <form
-            class=""
-            action="/post/likePost/<%= post.id %>?_method=PUT"
-            method="POST"
-          >
-            <button class="btn btn-primary fa fa-star p-3" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"> <%= post.fav %></button>
+          <form class="" action="/post/likePost/<%= post.id %>?_method=PUT" method="POST">
+            <button class="btn btn-primary mx-1" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"><i class="bi bi-star"> <%= post.fav %></i></button>
           </form>
+          <%if(post.user == user.id){ %>
+          <form action="/post/deletePost/<%= post.id %>?_method=DELETE" method="POST" class="col-3">
+            <button class="btn btn-danger mx-1" type="submit" title="Delete Swipe" style="font-size: 1.2rem;"><i class="bi bi-trash"></i></button>
+          </form>
+          <%}%>
         </div>
-        <%if(post.user == user.id){ %>
-        <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
-          method="POST"
-          class="col-3"
-        >
-          <button class="btn btn-primary fa fa-trash mt-2" type="submit"></button>
-        </form>
-        <%}%>
       </div>
     </div>
-    <div class="col-md-8 flex mx-auto">
-      <img src="<%= post.image%>" class="img-fluid" alt="Responsive image">
+    <div class="flex mx-auto" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; width: fit-content;">
+      <img src="<%= post.image%>" style="object-fit: fill; max-width: 800px; max-height: 800px;" class="m-3" alt="Responsive image">
     </div>
   </div>
 </div>
