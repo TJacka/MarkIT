@@ -50,6 +50,10 @@ body {
   box-shadow: none;
 }
 
+.navbar {
+  padding-bottom: 8px;
+}
+
 #btn-head {
   border: 1px solid rgb(238, 180, 168);
   color: black;
@@ -150,3 +154,35 @@ body {
   background: rgb(85, 49, 190);
   color: white;
 }
+
+#nav-logo {
+  margin-right: 5rem;
+}
+
+.logo-img {
+  margin: 5px 0;
+}
+
+@media (max-width: 991.98px) { 
+  .btn-guest {
+    margin: 0;
+  }
+
+  #nav-logo {
+    margin-right: 5rem;
+  }
+ }
+
+ @media (max-width: 767.98px) { 
+  #nav-logo {
+    margin-right: 0;
+  }
+ }
+
+ @media (max-width: 567.98px) { 
+  #welcome {
+    display: none;
+  }
+ }
+
+ 
