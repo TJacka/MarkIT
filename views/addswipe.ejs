@@ -5,28 +5,28 @@
       <div>
           <div class="p-4 p-md-5 col-lg-8 col-xxl-6 col-10 mx-auto" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; background: rgb(249, 239, 239);">
             <h1 class="mb-4" style="font-weight: 700; margin-top: -5px;">Add a swipe</h1>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+            <form action="/swipe/createSwipe" enctype="multipart/form-data" method="POST">
               <div class="mb-3">
-                  <label for="title" class="form-label">Swipe Title</label>
+                <label for="imgUpload" class="form-label" style="font-weight: 500">Swipe Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <div class="mb-3">
+                  <label for="title" class="form-label" style="font-weight: 500">Swipe Title</label>
                   <input type="text" class="form-control" id="title" name="title">
               </div>
               <div class="mb-3">
-              <label for="category" class="form-label">Swipe Category</label>
-              <select class="form-select" aria-label="Default select example" id="category" name="category">
-                <option selected>Select Category</option>
-                <option selected>Organizational</option>
-                <option selected>Design</option>
-                <option selected>Copy</option>
-                <option selected>Fact</option>
-              </select>
+                <label for="category" class="form-label" style="font-weight: 500">Swipe Category</label>
+                <select class="form-select" aria-label="Default select example" id="category" name="category">
+                  <option selected>Select Category</option>
+                  <option selected>Organizational</option>
+                  <option selected>Design</option>
+                  <option selected>Copy</option>
+                  <option selected>Fact</option>
+                </select>
               </div>
               <div class="mb-3">
-                <label for="caption" class="form-label">Swipe Description</label>
+                <label for="caption" class="form-label" style="font-weight: 500">Swipe Description</label>
                 <textarea class="form-control" id="caption" name="caption"></textarea>
-              </div>
-              <div class="mb-3">
-                <label for="imgUpload" class="form-label">Swipe Image</label>
-                <input type="file" class="form-control" id="imageUpload" name="file">
               </div>
               <div class="d-flex justify-content-center">
                 <button type="submit" class="w-50 btn btn-primary mt-3" value="Upload" style="margin-bottom: -5px; font-size: 1.1rem; font-weight: 600;">Submit</button>

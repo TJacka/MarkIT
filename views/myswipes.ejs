@@ -28,25 +28,25 @@
     </div>
     <div class="container">
       <div class="row row-cols-md-6">
-        <% for(let i=0; i<posts.length; i++) {%>
+        <% for(let i=0; i<swipes.length; i++) {%>
         <div class="col mb-2">
           <div class="card h-100" id="shadowhover" style="margin-left: -5px; margin-right: -5px; box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver;">
             <div class="card-img-top pt-2 px-2" style="max-height: 200px;">
-              <img src="<%= posts[i].image%>" class ="card-img-top" style="object-fit: cover; border: 1px solid silver" alt="...">
+              <img src="<%= swipes[i].image%>" class ="card-img-top" style="object-fit: cover; border: 1px solid silver" alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title" style="font-weight: 600;"><%= posts[i].title%></h5>
+              <h5 class="card-title" style="font-weight: 600;"><%= swipes[i].title%></h5>
               <div style="height: 70px;">
-                <p class="card-text;" style="font-size: 0.8rem;"><%= posts[i].caption %></p>
+                <p class="card-text;" style="font-size: 0.8rem;"><%= swipes[i].caption %></p>
               </div>
-            <!-- <p class="card-text"><i class="px-1 bi bi-heart"></i><%= posts[i].likes.length - 1 %></p> -->
+            <!-- <p class="card-text"><i class="px-1 bi bi-heart"></i><%= swipes[i].likes.length - 1 %></p> -->
             <hr style="margin-top: -1px;">
             <div class="d-flex justify-content-center">
-              <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary px-4" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
+              <a href="/swipe/<%= swipes[i]._id%>" class="btn btn-outline-primary px-4" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
             </div>
           </div>
           <div class="card-footer">
-            <span class="badge bg-success"><%= posts[i].category%>Likes: <%= posts[i].likes%></span>
+            <span class="badge bg-success"><%= swipes[i].category%>Likes: <%= swipes[i].likes%></span>
           </div>
         </div>
       </div>

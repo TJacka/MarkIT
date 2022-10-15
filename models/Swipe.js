@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const SwipeSchema = new mongoose.Schema({
   title: {
     type: String,
-    required: true,
   },
   image: {
     type: String,
@@ -15,10 +14,13 @@ const PostSchema = new mongoose.Schema({
   },
   caption: {
     type: String,
-    required: true,
   },
   likes: {
     type: Number,
+    required: true,
+  },
+  fav: {
+    type: Boolean,
     required: true,
   },
   user: {
@@ -29,6 +31,9 @@ const PostSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  category: {
+    type: String,
+  },
 });
 
-module.exports = mongoose.model("Post", PostSchema);
+module.exports = mongoose.model("Swipe", SwipeSchema);

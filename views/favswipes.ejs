@@ -1,28 +1,58 @@
 <%- include('partials/headerauthin') -%>
 
 <div class="container card-container">
-  <h1>My Favorite Swipes</h1>
-  <% console.log(posts[0]) %> 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <% for(var i=0; i<posts.length; i++) {%>
-      <%if(posts[i].bookmarks.includes(user.id)) {%>
-    <div class="col">
-      <div class="card h-100">
-        <img src="<%= posts[i].image%>" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= posts[i].title%></h5>
-          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <a href="/post/<%= posts[i]._id%>" class="btn btn-primary">View Swipe</a>
-          <!-- <a href="/post/<%= posts[i]._id%>" class="btn btn-primary">Edit</a> -->
+  <div class="d-flex align-items-start justify-content-between flex-wrap">
+    <h1 class="mb-4" style="font-weight: 700;">Favorite Swipes</h1>
+    <div class="d-flex mt-1">
+      <div class="dropdown mb-5">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">Action</button></li>
+          <li><button class="dropdown-item" type="button">Another action</button></li>
+          <li><button class="dropdown-item" type="button">Something else here</button></li>
+        </ul>
+      </div>
+      <div class="dropdown mx-3">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" type="button">Action</button></li>
+          <li><button class="dropdown-item" type="button">Another action</button></li>
+          <li><button class="dropdown-item" type="button">Something else here</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row row-cols-md-6">
+      <% for(let i=0; i<swipes.length; i++) {%>
+      <div class="col mb-2">
+        <div class="card h-100" id="shadowhover" style="margin-left: -5px; margin-right: -5px; box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver;">
+          <div class="card-img-top pt-2 px-2" style="max-height: 200px;">
+            <img src="<%= swipes[i].image%>" class ="card-img-top" style="object-fit: cover; border: 1px solid silver" alt="...">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title" style="font-weight: 600;"><%= swipes[i].title%></h5>
+            <div style="height: 70px;">
+              <p class="card-text;" style="font-size: 0.8rem;"><%= swipes[i].caption %></p>
+            </div>
+          <!-- <p class="card-text"><i class="px-1 bi bi-heart"></i><%= swipes[i].likes.length - 1 %></p> -->
+          <hr style="margin-top: -1px;">
+          <div class="d-flex justify-content-center">
+            <a href="/swipe/<%= swipes[i]._id%>" class="btn btn-outline-primary px-4" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
+          </div>
         </div>
         <div class="card-footer">
-          <span class="badge rounded-pill bg-primary"><%= posts[i].category%></span>
+          <span class="badge bg-success"><%= swipes[i].category%>Likes: <%= swipes[i].likes%></span>
         </div>
       </div>
     </div>
-    <% } %>
-    <% } %>
-  </div>
+  <% } %>
+</div>
+</div>
 </div>
 
 <%- include('partials/footer') -%>
