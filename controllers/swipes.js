@@ -72,7 +72,7 @@ module.exports = {
         user: req.user.id,
       });
       console.log("Swipe has been added!");
-      res.redirect("/topswipes");
+      res.redirect("/allswipes");
     } catch (err) {
       console.log(err);
     }
@@ -100,9 +100,9 @@ module.exports = {
       // Delete swipe from db
       await Swipe.remove({ _id: req.params.id });
       console.log("Deleted Swipe");
-      res.redirect("/topswipes");
+      res.redirect("/allswipes");
     } catch (err) {
-      res.redirect("/topswipes");
+      res.redirect("/allswipes");
     }
   },
   favSwipe: async (req, res) => {

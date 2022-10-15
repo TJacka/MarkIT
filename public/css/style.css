@@ -134,10 +134,11 @@ body {
 }
 
 #btn-viewswipe {
-  background: white;
-  color: rgb(85, 49, 190);
+  background: rgb(124, 92, 218);
+  color: white;
   font-weight: 600;
   border: 1px solid rgb(85, 49, 190);
+  margin: 0 auto;
 }
 
 #btn-viewswipe:hover {

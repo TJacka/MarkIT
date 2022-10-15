@@ -10,14 +10,14 @@
           <p>By: <%= user.userName %></p>
         </div>
       </div>
-      <p style="font-weight: 600; font-size: 1.3rem; text-align: center; width: 30rem;"><%= swipe.caption %></p>
+      <p style="font-weight: 500; font-size: 1.3rem; text-align: center; width: 30rem;"><%= swipe.caption %></p>
       <div class="col-3">
         <div class="d-flex mt-1">
           <form style="margin-left: auto;" action="/swipe/likeSwipe/<%= swipe.id %>?_method=PUT" method="POST">
             <button class="btn mx-1" id="btn-signup" title="Like Swipe" style="font-size: 1.2rem; font-family: 'Open Sans', sans-serif;" type="submit"><i class="bi bi-hand-thumbs-up" style="font-style: normal; font-weight: 500;"></i></button>
           </form>
           <form class="" action="/swipe/favSwipe/<%= swipe.id %>?_method=PUT" method="POST">
-            <button class="btn mx-1" id="btn-signup" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"><i class="bi bi-star-fill"></i></button>
+            <button class="btn mx-1" id="btn-signup" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"><i class="bi bi-star"></i></button>
           </form>   
           <%if(swipe.user == user.id){ %>
           <form action="/swipe/deleteSwipe/<%= swipe.id %>?_method=DELETE" method="POST" class="col-3">

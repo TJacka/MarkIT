@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="container">
-      <div class="row row-cols-md-4">
+      <div class="d-flex row row-cols-md-4">
         <% for(let i=0; i<swipes.length; i++) {%>
         <div class="col mb-2">
           <div class="card h-100" style="margin-left: -5px; margin-right: -5px; box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver;">
@@ -30,24 +30,26 @@
               <img src="<%= swipes[i].image%>" class ="card-img-top" style="object-fit: cover; border: 1px solid silver" alt="...">
             </div>
             <div class="card-body">
-              <h5 class="card-title" style="font-weight: 600;"><%= swipes[i].title%></h5>
-              <div>
+              <div style="height: 10rem; overflow-y: auto; margin-right: -5px;">
+                <h5 class="card-title" style="font-weight: 700;"><%= swipes[i].title%></h5>
                 <p class="card-text;"><%= swipes[i].caption %></p>
               </div>
-              <hr style="margin-top: -1px;">
-            <div class="d-flex justify-content-center align-items-center">
-              <a href="/swipe/<%= swipes[i]._id%>" class="btn px-4" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
+              <div>
+                <hr style="margin-top: -1px;">
+                <div class="d-flex justify-content-center">
+                  <a href="/swipe/<%= swipes[i]._id%>" class="btn px-4" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer d-flex justify-content-between">
+              <span class="badge bg-success" style="padding-top: 5px;"><%= swipes[i].category%>Likes: <%= swipes[i].likes%></span>
+              <span style="font-size: 0.8rem;"><small class="badge opacity-50 px-1" style="padding-top: 5px; padding-bottom: 3px; background: rgb(238, 180, 168); color: black; font-size: 0.8rem; font-weight: 500;"><%= new Date().getDate(); %>/<%= new Date().getMonth(); %>/<%= new Date().getFullYear(); %></small></span>
             </div>
           </div>
-          <div class="card-footer d-flex justify-content-between">
-            <span class="badge bg-success"><%= swipes[i].category%>Likes: <%= swipes[i].likes%></span>
-            <span style="font-size: 0.8rem;"><small class="badge opacity-50 px-1" style="padding-top: 5px; padding-bottom: 3px; background: rgb(238, 180, 168); color: black; font-size: 0.8rem;"><%= new Date().getDate(); %>/<%= new Date().getMonth(); %>/<%= new Date().getFullYear(); %></small></span>
-          </div>
         </div>
-      </div>
     <% } %>
+    </div>
   </div>
-</div>
 </div>
 
 <%- include('partials/footer') -%>
