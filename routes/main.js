@@ -9,7 +9,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 router.get("/", homeController.getIndex);
 router.get("/home", ensureAuth, authController.getHome);
 router.get("/addswipe", ensureAuth, swipesController.addSwipe);
-router.get("/topswipes", ensureAuth, swipesController.getFeed);
+router.get("/allswipes", ensureAuth, swipesController.getFeed);
 router.get("/guestswipes", ensureGuest, swipesController.getFreeFeed);
 router.get("/favswipes", ensureAuth, swipesController.getFavSwipes);
 router.get("/myswipes", ensureAuth, swipesController.getUserSwipes);

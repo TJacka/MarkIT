@@ -1,8 +1,13 @@
 const cloudinary = require("../middleware/cloudinary");
 const Swipe = require("../models/Swipe");
 const User = require("../models/User");
+const Comment = require("../models/Comment");
+const moment = require('moment')
 
 module.exports = {
+  formatDate: function (date, format) {
+    return moment(date).utc().format(format)
+  },
   addSwipe: async (req, res) => {
     try {
       const swipes = await Swipe.find({ user: req.user.id });
@@ -14,7 +19,7 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const swipes = await Swipe.find().sort({ likes: "desc" }).lean();
-      res.render("topswipes.ejs", { swipes: swipes, user: req.user });
+      res.render("allswipes.ejs", { swipes: swipes, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -46,7 +51,8 @@ module.exports = {
   getSwipe: async (req, res) => {
     try {
       const swipe = await Swipe.findById(req.params.id);
-      res.render("swipe.ejs", { swipe: swipe, user: req.user });
+      const comments = await Comment.find({swipe: req.params.id}).sort({ createdAt: "desc" }).lean();
+      res.render("swipe.ejs", { swipe: swipe, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
     }

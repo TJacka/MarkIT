@@ -65,7 +65,7 @@ body {
 }
 
 .btn-hero {
-  background: rgb(234, 57, 44);
+  background: rgb(118, 80, 217);
   color: white;
   border-radius: 5px;
   font-weight: 500;
@@ -74,7 +74,7 @@ body {
 }
 
 .btn-hero:hover {
-  background: rgb(181, 26, 15);
+  background: rgb(72, 41, 152);
   color: white;
 }
 

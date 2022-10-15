@@ -4,7 +4,7 @@
   <div class="flex"> 
     <div class="d-flex justify-content-between">
       <div class="col-3">
-        <h1 style="font-weight: 800; font-size: 2rem;"><%= swipe.title %></h1>
+        <h1 class="mb-3" style="font-weight: 800; font-size: 2rem;"><%= swipe.title %></h1>
         <div class="d-flex justify-content-between w-50">
           <div class="badge bg-success" style="width: 4rem; height: 25px; padding-top: 7px; text-align: left;">Likes: <%= swipe.likes %></div>
           <p>By: <%= user.userName %></p>
@@ -29,6 +29,33 @@
     </div>
     <div class="flex mx-auto" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; width: fit-content;">
       <img src="<%= swipe.image%>" style="object-fit: fill; max-width: 800px; max-height: 800px;" class="m-3" alt="Responsive image">
+    </div>
+    <div class="mt-5 w-50 mx-auto">
+      <h2>Add a comment</h2>
+      <form action="/comment/createComment/<%=swipe._id%>" method="POST">
+        <div class="mb-3">
+            <label for="title" class="form-label">Comment</label>
+            <input type="text" class="form-control" id="comment" name="comment">
+        </div>
+        <button type="submit" id="btn-loginpage" class="btn" >Submit</button>
+      </form>
+    </div>
+    <div style="margin-top: 40px;">
+      <ul style="padding-left: 0;">
+        <% for(var i=0; i<comments.length; i++) {%>
+          <li class="col-6 justify-content-between mt-4" style="list-style: none; margin: 0 auto; border-radius: 5px;">
+            <div class="list-group-item d-flex gap-3 py-3">
+              <i class="bi bi-person-circle"></i>
+              <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                  <p class="mb-0 opacity-75"><%= comments[i].comment%></p>
+                </div>
+                <small class="badge opacity-50" style="padding-top: 6px; background: rgb(238, 180, 168); color: black;"><%= new Date().getDate(); %> / <%= new Date().getMonth(); %> / <%= new Date().getFullYear(); %></small>
+              </div>
+            </div>
+          </li>
+        <% } %>
+      </ul>
     </div>
   </div>
 </div>

@@ -2,22 +2,17 @@
 
 <div class="container card-container">
   <div class="d-flex align-items-start justify-content-between flex-wrap">
-    <h1 class="mb-4" style="font-weight: 700;">Favorite Swipes</h1>
+    <h1 class="mb-5" style="font-weight: 700;">Favorite Swipes</h1>
     <div class="d-flex mt-1">
-      <div class="dropdown mb-5">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown
-        </button>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Sort by</button>
         <ul class="dropdown-menu">
-          <li><button class="dropdown-item" type="button">Action</button></li>
-          <li><button class="dropdown-item" type="button">Another action</button></li>
-          <li><button class="dropdown-item" type="button">Something else here</button></li>
+          <li><button class="dropdown-item" type="button">Date Added</button></li>
+          <li><button class="dropdown-item" type="button">Likes</button></li>
         </ul>
       </div>
       <div class="dropdown mx-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown
-        </button>
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Category</button>
         <ul class="dropdown-menu">
           <li><button class="dropdown-item" type="button">Action</button></li>
           <li><button class="dropdown-item" type="button">Another action</button></li>
@@ -45,8 +40,9 @@
             <a href="/swipe/<%= swipes[i]._id%>" class="btn btn-outline-primary px-4" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
           </div>
         </div>
-        <div class="card-footer">
-          <span class="badge bg-success"><%= swipes[i].category%>Likes: <%= swipes[i].likes%></span>
+        <div class="card-footer d-flex justify-content-between">
+          <span class="badge bg-success" style="padding-top: 5px;"><%= swipes[i].category%>Likes: <%= swipes[i].likes%></span>
+          <small class="badge opacity-50 px-1" style="padding-top: 5px; padding-bottom: 3px; background: rgb(238, 180, 168); color: black; font-size: 0.8rem;"><%= new Date().getDate(); %>/<%= new Date().getMonth(); %>/<%= new Date().getFullYear(); %></small>
         </div>
       </div>
     </div>
