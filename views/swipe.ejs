@@ -17,9 +17,9 @@
             <button class="btn mx-1" id="btn-signup" title="Like Swipe" style="font-size: 1.2rem; font-family: 'Open Sans', sans-serif;" type="submit"><i class="<%if(swipe.likes.includes(user.id)){ %> bi bi-hand-thumbs-up-fill <%} else { %> bi bi-hand-thumbs-up <% }%>" style="font-style: normal; font-weight: 500;"></i></button>
           </form>
           <form class="" action="/swipe/favSwipe/<%= swipe.id %>?_method=PUT" method="POST">
-            <button class="btn mx-1" id="btn-signup" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"><i class="<%if(swipe.favorites.includes(user.userName)){ %> bi bi-star-fill <%} else { %> bi bi-star <% }%>"></i></button>
+            <button class="btn mx-1" id="btn-signup" title="Add to Favorites" style="font-size: 1.2rem;" type="submit"><i class="<%if(swipe.favorites.includes(user.id)){ %> bi bi-star-fill <%} else { %> bi bi-star <% }%>"></i></button>
           </form>   
-          <%if(swipe.user == user._id){ %>
+          <%if(swipe.userName == user.userName){ %>
           <form action="/swipe/deleteSwipe/<%= swipe.id %>?_method=DELETE" method="POST" class="col-3">
             <button class="btn btn-danger mx-1" type="submit" title="Delete Swipe" style="font-size: 1.2rem; padding-top: 7px; padding-bottom: 5px;"><i class="bi bi-trash"></i></button>
           </form>
