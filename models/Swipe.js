@@ -16,11 +16,11 @@ const SwipeSchema = new mongoose.Schema({
     type: String,
   },
   likes: {
-    type: Number,
+    type: Array,
     required: true,
   },
-  fav: {
-    type: Boolean,
+  favorites: {
+    type: Array,
     required: true,
   },
   user: {

@@ -162,6 +162,10 @@ body {
   margin-right: 8rem;
 }
 
+.btn-liked {
+  background-color: #f03566;
+}
+
 @media (max-width: 991.98px) { 
   .btn-guest {
     margin: 0;

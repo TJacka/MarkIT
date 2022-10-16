@@ -2,12 +2,8 @@ const cloudinary = require("../middleware/cloudinary");
 const Swipe = require("../models/Swipe");
 const User = require("../models/User");
 const Comment = require("../models/Comment");
-const moment = require('moment')
 
 module.exports = {
-  formatDate: function (date, format) {
-    return moment(date).utc().format(format)
-  },
   addSwipe: async (req, res) => {
     try {
       const swipes = await Swipe.find({ user: req.user.id });
@@ -34,7 +30,7 @@ module.exports = {
   },
   getFavSwipes: async (req, res) => {
     try {
-      const swipes = await Swipe.find( {"fav": true } ).sort({ likes: "desc" }).lean();
+      const swipes = await Swipe.find( {user: req.user.id } ).sort({ likes: "desc" }).lean();
       res.render("favswipes.ejs", { swipes: swipes, user: req.user });
     } catch (err) {
       console.log(err);
@@ -77,20 +73,41 @@ module.exports = {
       console.log(err);
     }
   },
-  likeSwipe: async (req, res) => {
-    try {
-      await Swipe.findOneAndUpdate(
-        { _id: req.params.id },
-        {
-          $inc: { likes: 1 },
-        }
-      );
-      console.log("Likes +1");
-      res.redirect(`/swipe/${req.params.id}`);
-    } catch (err) {
-      console.log(err);
+  likeSwipe: async (req, res)=>{
+    let liked = false
+    try{
+      let post = await Swipe.findById({_id:req.params.id})
+      liked = (swipe.likes.includes(req.user.id))
+    } catch(err){
     }
-  },
+    //if already liked we will remove user from likes array
+    if(liked){
+      try{
+        await Swipe.findOneAndUpdate({_id:req.params.id},
+          {
+            $pull : {'likes' : req.user.id}
+          })
+          
+          console.log('Removed user from likes array')
+          res.redirect('back')
+        }catch(err){
+          console.log(err)
+        }
+      }
+      //else add user to like array
+      else{
+        try{
+          await Swipe.findOneAndUpdate({_id:req.params.id},
+            {
+              $addToSet : {'likes' : req.user.id}
+            })
+            console.log('Added user to likes array')
+            res.redirect(`back`)
+        }catch(err){
+            console.log(err)
+        }
+      }
+    },
   deleteSwipe: async (req, res) => {
     try {
       // Find swipe by id
@@ -105,16 +122,39 @@ module.exports = {
       res.redirect("/allswipes");
     }
   },
-  favSwipe: async (req, res) => {
-    try {
-      await Swipe.findOneAndUpdate(
-        { _id: req.params.id },
-        { fav: true }
-      );
-      console.log("Add to favorites");
-      res.redirect(`/swipe/${req.params.id}`);
-    } catch (err) {
-      console.log(err);
+  favSwipe: async (req, res)=>{
+    let favorited = false
+    try{
+      let swipe = await Swipe.findById({_id:req.params.id})
+      favorited = (swipe.favorites.includes(req.user.id))
+    } catch(err){
     }
-  },
+    //if already favorited we will remove user from array
+    if(favorited){
+      try{
+        await Swipe.findOneAndUpdate({_id:req.params.id},
+          {
+            $pull : {'favorites' : req.user.id}
+          })
+          
+          console.log('Removed user from favorites array')
+          res.redirect('back')
+        }catch(err){
+          console.log(err)
+        }
+      }
+      //else add user to favorites array
+      else{
+        try{
+          await Swipe.findOneAndUpdate({_id:req.params.id},
+            {
+              $addToSet : {'favorites' : req.user.id}
+            })
+            console.log('Added user to favorites array')
+            res.redirect(`back`)
+        }catch(err){
+            console.log(err)
+        }
+      }
+    },
 };

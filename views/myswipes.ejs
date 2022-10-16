@@ -30,7 +30,7 @@
             <img src="<%= swipes[i].image%>" class ="card-img-top" style="object-fit: cover; border: 1px solid silver" alt="...">
           </div>
           <div class="card-body">
-            <div style="height: 10rem;">
+            <div style="height: 10rem; overflow-y: auto; margin-right: -5px;">
               <h5 class="card-title" style="font-weight: 700;"><%= swipes[i].title%></h5>
               <p class="card-text;"><%= swipes[i].caption %></p>
             </div>
@@ -42,7 +42,7 @@
             </div>
           </div>
           <div class="card-footer d-flex justify-content-between">
-            <span class="badge bg-success" style="padding-top: 5px;"><%= swipes[i].category%>Likes: <%= swipes[i].likes%></span>
+            <span class="badge bg-success" style="padding-top: 5px;"><%= swipes[i].category%>Likes: <%= swipes[i].likes.length-1%></span>
             <span style="font-size: 0.8rem;"><small class="badge opacity-50 px-1" style="padding-top: 5px; padding-bottom: 3px; background: rgb(238, 180, 168); color: black; font-size: 0.8rem; font-weight: 500;"><%= new Date().getDate(); %>/<%= new Date().getMonth(); %>/<%= new Date().getFullYear(); %></small></span>
           </div>
         </div>
