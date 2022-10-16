@@ -6,13 +6,13 @@
       <% for(let i=0; i<swipes.length; i++) {%>
       <div class="col mb-2">
         <div class="card h-100" style="margin-left: -5px; margin-right: -5px; box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver;">
-          <div class="card-img-top pt-2 px-2" style="max-height: 290px;">
+          <div class="card-img-top pt-2 px-2" style="max-height: 20rem;">
             <img src="<%= swipes[i].image%>" class ="card-img-top" style="object-fit: cover; border: 1px solid silver" alt="...">
           </div>
           <div class="card-body">
-            <div style="height: 10rem; overflow-y: auto; margin-right: -5px;">
+            <div class="d-flex flex-column justify-content-evenly align-items-center" style="height: 10rem; overflow-y: auto; margin-right: -5px; text-align: center;">
               <h5 class="card-title" style="font-weight: 600;"><%= swipes[i].title%></h5>
-              <p class="card-text;" style="font-family: serif;"><%= swipes[i].caption %></p>
+              <p class="card-text;"><%= swipes[i].caption %></p>
             </div>
             <div>
               <hr style="margin-top: -1px;">

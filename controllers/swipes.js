@@ -66,6 +66,7 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        userName: req.user.userName
       });
       console.log("Swipe has been added!");
       res.redirect("/allswipes");
@@ -76,7 +77,7 @@ module.exports = {
   likeSwipe: async (req, res)=>{
     let liked = false
     try{
-      let post = await Swipe.findById({_id:req.params.id})
+      let swipe = await Swipe.findById({_id:req.params.id})
       liked = (swipe.likes.includes(req.user.id))
     } catch(err){
     }
@@ -87,7 +88,6 @@ module.exports = {
           {
             $pull : {'likes' : req.user.id}
           })
-          
           console.log('Removed user from likes array')
           res.redirect('back')
         }catch(err){
@@ -108,25 +108,11 @@ module.exports = {
         }
       }
     },
-  deleteSwipe: async (req, res) => {
-    try {
-      // Find swipe by id
-      let swipe = await Swipe.findById({ _id: req.params.id });
-      // Delete image from cloudinary
-      await cloudinary.uploader.destroy(swipe.cloudinaryId);
-      // Delete swipe from db
-      await Swipe.remove({ _id: req.params.id });
-      console.log("Deleted Swipe");
-      res.redirect("/allswipes");
-    } catch (err) {
-      res.redirect("/allswipes");
-    }
-  },
   favSwipe: async (req, res)=>{
     let favorited = false
     try{
       let swipe = await Swipe.findById({_id:req.params.id})
-      favorited = (swipe.favorites.includes(req.user.id))
+      favorited = (swipe.favorites.includes(req.user.userName))
     } catch(err){
     }
     //if already favorited we will remove user from array
@@ -134,9 +120,8 @@ module.exports = {
       try{
         await Swipe.findOneAndUpdate({_id:req.params.id},
           {
-            $pull : {'favorites' : req.user.id}
+            $pull : {'favorites' : req.user.userName}
           })
-          
           console.log('Removed user from favorites array')
           res.redirect('back')
         }catch(err){
@@ -148,13 +133,27 @@ module.exports = {
         try{
           await Swipe.findOneAndUpdate({_id:req.params.id},
             {
-              $addToSet : {'favorites' : req.user.id}
+              $addToSet : {'favorites' : req.user.userName}
             })
             console.log('Added user to favorites array')
             res.redirect(`back`)
         }catch(err){
             console.log(err)
         }
+      }
+    },
+    deleteSwipe: async (req, res) => {
+      try {
+        // Find swipe by id
+        let swipe = await Swipe.findById({ _id: req.params.id });
+        // Delete image from cloudinary
+        await cloudinary.uploader.destroy(swipe.cloudinaryId);
+        // Delete swipe from db
+        await Swipe.remove({ _id: req.params.id });
+        console.log("Deleted Swipe");
+        res.redirect("/allswipes");
+      } catch (err) {
+        res.redirect("/allswipes");
       }
     },
 };
