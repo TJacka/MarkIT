@@ -12,15 +12,16 @@ module.exports = {
       console.log(err);
     }
   },
-  getFeed: async (req, res) => {
+  getSwipe: async (req, res) => {
     try {
-      const swipes = await Swipe.find().sort({ likes: "desc" }).lean();
-      res.render("allswipes.ejs", { swipes: swipes, user: req.user });
+      const swipe = await Swipe.findById(req.params.id);
+      const comments = await Comment.find({swipes: req.params.id}).sort({ createdAt: "desc" }).lean();
+      res.render("swipe.ejs", { swipe: swipe, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
     }
   },
-  getFreeFeed: async (req, res) => {
+  getFreeSwipes: async (req, res) => {
     try {
       const swipes = await Swipe.find().sort({ likes: "desc" }).lean();
       res.render("guestswipes.ejs", { swipes: swipes });
@@ -44,11 +45,10 @@ module.exports = {
       console.log(err);
     }
   },
-  getSwipe: async (req, res) => {
+  getSwipes: async (req, res) => {
     try {
-      const swipe = await Swipe.findById(req.params.id);
-      const comments = await Comment.find({swipe: req.params.id}).sort({ createdAt: "desc" }).lean();
-      res.render("swipe.ejs", { swipe: swipe, user: req.user, comments: comments });
+      const swipes = await Swipe.find().sort({ likes: "desc" }).lean();
+      res.render("allswipes.ejs", { swipes: swipes, user: req.user });
     } catch (err) {
       console.log(err);
     }
