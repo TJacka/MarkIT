@@ -30,7 +30,7 @@ module.exports = {
   },
   getFavSwipes: async (req, res) => {
     try {
-      const swipes = await Swipe.find( {user: req.user.id } ).sort({ likes: "desc" }).lean();
+      const swipes = await Swipe.find().sort({ likes: "desc" }).lean();
       res.render("favswipes.ejs", { swipes: swipes, user: req.user });
     } catch (err) {
       console.log(err);
@@ -112,7 +112,7 @@ module.exports = {
     let favorited = false
     try{
       let swipe = await Swipe.findById({_id:req.params.id})
-      favorited = (swipe.favorites.includes(req.user.userName))
+      favorited = (swipe.favorites.includes(req.user.id))
     } catch(err){
     }
     //if already favorited we will remove user from array
@@ -120,7 +120,7 @@ module.exports = {
       try{
         await Swipe.findOneAndUpdate({_id:req.params.id},
           {
-            $pull : {'favorites' : req.user.userName}
+            $pull : {'favorites' : req.user.id}
           })
           console.log('Removed user from favorites array')
           res.redirect('back')
@@ -133,7 +133,7 @@ module.exports = {
         try{
           await Swipe.findOneAndUpdate({_id:req.params.id},
             {
-              $addToSet : {'favorites' : req.user.userName}
+              $addToSet : {'favorites' : req.user.id}
             })
             console.log('Added user to favorites array')
             res.redirect(`back`)
