@@ -57,7 +57,6 @@ module.exports = {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-
       await Swipe.create({
         fav: false,
         title: req.body.title,
