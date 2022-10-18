@@ -123,7 +123,7 @@ body {
 }
 
 #btn-loginpage {
-  background: rgb(124, 92, 218);
+  background: rgb(85, 49, 190);
   color: white;
 }
 
@@ -201,6 +201,10 @@ p.hero-sub {
   text-align: center;
 }
 
+#btn-loginpage {
+  width: 100%;
+}
+
 @media (max-width: 1500px) { 
   .card-img-top-img {
     max-height: 14rem;
@@ -226,6 +230,10 @@ p.hero-sub {
 
   .commentbox {
     width: 70%;
+  }
+
+  .card-text {
+    line-height: 1.2rem;
   }
 }
 
@@ -400,8 +408,17 @@ p.hero-sub {
     left: 65%;
     top: 10.5rem;
   }
+
   .swipe-details-sub {
     margin-top: 10px;
+  }
+
+  .nav-small {
+    justify-content: space-between;
+  }
+
+  .signin-form {
+    max-width: 100%;
   }
  }
 

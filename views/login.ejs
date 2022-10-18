@@ -1,8 +1,8 @@
 <%- include('partials/header') -%>
 
-<main class="container flex row justify-content-center align-items-center mx-auto" style="height: 100%;">
+<main class="container flex row justify-content-center align-items-center mx-auto signin-form" style="height: 100%;">
   <div class="flex row justify-content-center align-items-center" style="height: 100%;">
-    <section class="col-lg-6 col-10 flex justify-content-center align-items-center">
+    <section class="col-lg-6 col-md-10 flex justify-content-center align-items-center">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -20,7 +20,7 @@
             <label for="exampleInputPassword1" class="form-label">Password</label>
           </div>
           <div class="d-flex justify-content-center mt-4">
-            <button class="w-50 btn py-2" style="font-weight: 600; font-size: 1.1rem;" id="btn-loginpage" type="submit">Sign in</button>
+            <button class="btn py-2" style="font-weight: 600; font-size: 1.1rem;" id="btn-loginpage" type="submit">Sign in</button>
           </div>
         </form>
     </section>
