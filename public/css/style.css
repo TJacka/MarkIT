@@ -33,11 +33,6 @@ body {
     min-height: 80vh;
 }
 
-.card-img-top{
-    width: 100%;
-    height: 100%;
-}
-
 .btn-liked{
     color: #f03566;
   }
@@ -74,7 +69,7 @@ body {
 }
 
 .btn-hero:hover {
-  background: rgb(72, 41, 152);
+  background: rgb(85, 49, 190);
   color: white;
 }
 
@@ -134,7 +129,7 @@ body {
 }
 
 #btn-viewswipe {
-  background: rgb(124, 92, 218);
+  background: rgb(85, 49, 190);
   color: white;
   font-weight: 600;
   border: 1px solid rgb(85, 49, 190);
@@ -159,28 +154,142 @@ body {
 }
 
 .logo-container {
-  margin-right: 8rem;
+  margin-right: 5rem;
 }
 
 .btn-liked {
   background-color: #f03566;
 }
 
+.hero-heading {
+  line-height: 5rem;
+}
+
+.card-img-top-img {
+  max-height: 17rem;
+  width: 100%;
+}
+
+.btn-hero {
+  width: 50%;
+}
+
+@media (max-width: 1500px) { 
+  .card-img-top-img {
+    max-height: 14rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 1200px) { 
+  .card-img-top-img {
+    max-height: 12rem;
+    width: 100%;
+  }
+}
+
 @media (max-width: 991.98px) { 
-  .btn-guest {
-    margin: 0;
+
+  #maincard {
+    min-width: 12rem;
+  }
+
+  .hero-heading {
+    line-height: 4.5rem;
+  }
+
+  .logo-container {
+    margin-right: 0rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
+
+  #swipediv {
+    margin: 0 -6rem;
+    width: 90%; 
+  }
+
+  .card-img-top-img {
+    max-height: 10rem;
+    width: 100%;
+  }
+
+  .btn-hero {
+    width: 50%;
+  }
+
+  p {
+    line-height: 1.7rem;
   }
  }
 
  @media (max-width: 767.98px) { 
   #nav-logo {
-    margin-right: 0;
+    margin-right: 5rem;
   }
- }
+
+  .hero-heading {
+    line-height: 3.5rem;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  #btn-guest {
+    margin-right: 0rem;
+  }
+
+  .btn-hero {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  h5 {
+    font-size: 0.8rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  .card-img-top-img {
+    max-height: 12rem;
+  }
+}
 
  @media (max-width: 567.98px) { 
   #welcome {
     display: none;
+  }
+
+  .hero-heading {
+    line-height: 3rem;
+    font-weight: 900;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  #btn-guest {
+    margin-right: 1rem;
+  }
+
+  .btn-hero {
+    width: 50%;
+    margin: 0 auto;
   }
  }
 

@@ -2,10 +2,10 @@
 
 <div class="container card-container">
   <div class="container">
-    <div class="d-flex row row-cols-md-4">
+    <div class="d-flex row row-cols-xlg-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-3" id="swipediv" style="max-width: 90%; margin: 0 auto;">
       <% for(let i=0; i<8; i++) {%>
       <div class="col mb-2">
-        <div class="card h-100" style="margin-left: -5px; margin-right: -5px; box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver;">
+        <div class="flex card h-100" id="swipecard" style="margin-left: -5px; margin-right: -5px; box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; min-width: 13rem;">
           <div class="card-img-top pt-2 px-2" style="max-height: 20rem;">
             <img src="<%= swipes[i].image%>" class ="card-img-top" style="object-fit: cover; border: 1px solid silver" alt="...">
           </div>
@@ -17,7 +17,7 @@
             <div>
               <hr style="margin-top: -1px;">
               <div class="d-flex justify-content-between align-items-end">
-                <a href="/signup" class="btn" id="btn-viewswipe" style="font-weight: 600;">View Swipe</a>
+                <a href="/signup" class="btn w-100" id="btn-viewswipe" style="font-weight: 600;">View Swipe</a>
               </div>
             </div>
           </div>
