@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300;400;500;600;700;800;900&display=swap');
+
 html,
 body {
     height: 100%;
     font-size: 1rem;
+    font-family: 'Lexend Deca', sans-serif;
+    letter-spacing: -0.75px;
 }
 
 *{
@@ -90,7 +94,7 @@ body {
 }
 
 #btn-signup {
-  background: rgb(124, 92, 218); 
+  background: rgb(85, 49, 190); 
   color: white;
   font-weight: 600;
 }
@@ -129,7 +133,7 @@ body {
 }
 
 #btn-viewswipe {
-  background: rgb(85, 49, 190);
+  background: rgb(124, 92, 218);
   color: white;
   font-weight: 600;
   border: 1px solid rgb(85, 49, 190);
@@ -144,7 +148,6 @@ body {
 #btn-guest {
   border: 1px solid rgb(238, 180, 168); 
   background: white;
-  margin-left: 50px;
 }
 
 #btn-guest:hover {
@@ -154,7 +157,7 @@ body {
 }
 
 .logo-container {
-  margin-right: 5rem;
+  margin-right: 8rem;
 }
 
 .btn-liked {
@@ -163,6 +166,12 @@ body {
 
 .hero-heading {
   line-height: 5rem;
+  letter-spacing: -3px;
+}
+
+p.hero-sub {
+  line-height: 1.8rem;
+  font-size: 1.3rem;
 }
 
 .card-img-top-img {
@@ -172,6 +181,24 @@ body {
 
 .btn-hero {
   width: 50%;
+}
+
+.commentbox {
+  width: 50%;
+}
+
+.swipe-img {
+  width: 100%;
+  margin: 1rem;
+}
+
+.details-container{
+  display: flex;
+}
+
+.swipe-details-sub {
+  width: 30rem;
+  text-align: center;
 }
 
 @media (max-width: 1500px) { 
@@ -186,6 +213,20 @@ body {
     max-height: 12rem;
     width: 100%;
   }
+
+  h5 {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.8rem;
+  }
+
+  .commentbox {
+    width: 70%;
+  }
 }
 
 @media (max-width: 991.98px) { 
@@ -199,17 +240,17 @@ body {
   }
 
   .logo-container {
-    margin-right: 0rem;
+    margin-right: 4rem;
   }
 
   h5 {
     font-size: 1rem;
-    line-height: 1.2rem;
+    line-height: 1.3rem;
   }
 
   p {
-    font-size: 1rem;
-    line-height: 1.2rem;
+    font-size: 0.9rem;
+    line-height: 1.8rem;
   }
 
   #swipediv {
@@ -218,16 +259,46 @@ body {
   }
 
   .card-img-top-img {
-    max-height: 10rem;
+    max-height: 12rem;
     width: 100%;
   }
 
   .btn-hero {
-    width: 50%;
+    width: 35%;
   }
 
-  p {
-    line-height: 1.7rem;
+  .commentbox {
+    width: 75%;
+  }
+
+  .swipe-img-holder {
+    padding: 1rem;
+    margin: 0 1rem;
+  }
+
+  .details-container {
+    display: block;
+  }
+
+  .swipe-img {
+    width: 100%;
+    margin: 0rem;
+  }
+
+  .swipe-title {
+    width: 100%;
+  }
+
+  .swipe-details-sub {
+    width: 100%;
+    text-align: left;
+  
+  }
+
+  .btn-social {
+    position:absolute;
+    left: 65%;
+    top: 10.5rem;
   }
  }
 
@@ -237,12 +308,9 @@ body {
   }
 
   .hero-heading {
-    line-height: 3.5rem;
+    line-height: 4.5rem;
     font-weight: 900;
-    text-align: center;
-  }
-
-  p {
+    font-size: 4.5rem;
     text-align: center;
   }
 
@@ -251,32 +319,58 @@ body {
   }
 
   .btn-hero {
-    width: 75%;
+    width: 50%;
     margin: 0 auto;
+    background-color: rgb(85, 49, 190);
   }
 
   h5 {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.7rem;
+    text-align: center;
   }
 
   .card-img-top-img {
     max-height: 12rem;
   }
+
+  .logo-container {
+    margin-right: 1rem;
+  }
+
+  #btn-viewswipe {
+    background: rgb(85, 49, 190);
+  }
+
+  .commentbox {
+    width: 90%;
+  }
+
+  .btn-social {
+    position:absolute;
+    left: 65%;
+    top: 10.5rem;
+  }
+
+  .swipe-details-sub {
+    margin-top: 10px;
+  }
 }
 
- @media (max-width: 567.98px) { 
+ @media (max-width: 575.98px) { 
   #welcome {
     display: none;
   }
 
   .hero-heading {
-    line-height: 3rem;
+    line-height: 3.5rem;
     font-weight: 900;
     text-align: center;
+    font-size: 3.5rem;
   }
 
   p {
@@ -288,8 +382,26 @@ body {
   }
 
   .btn-hero {
-    width: 50%;
+    width: 75%;
     margin: 0 auto;
+  }
+
+  .card-img-top-img {
+    max-height: 11rem;
+    width: 100%;
+  }
+
+  .container {
+    max-width: max-content;
+  }
+
+  .btn-social {
+    position:absolute;
+    left: 65%;
+    top: 10.5rem;
+  }
+  .swipe-details-sub {
+    margin-top: 10px;
   }
  }
 

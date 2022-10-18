@@ -2,16 +2,16 @@
 
 <div class="container card-container">
   <div class="flex"> 
-    <div class="d-flex justify-content-between">
-      <div class="col-3">
+    <div class="justify-content-between details-container">
+      <div class="flex col-3 swipe-title">
         <h1 class="mb-3" style="font-weight: 800; font-size: 2rem;"><%= swipe.title %></h1>
         <div class="d-flex justify-content-between" style="width: 10rem;">
-          <div class="badge bg-success" style="width: 4rem; height: 25px; padding-top: 7px; text-align: left;margin-right: 8px";>Likes: <%= swipe.likes.length - 1 %></div>
+          <div class="badge bg-success" style="width: 4rem; height: 25px; padding-top: 6px; text-align: left;margin-right: 8px";>Likes: <%= swipe.likes.length - 1 %></div>
           <p>By: <%= swipe.userName %></p>
         </div>
       </div>
-      <p style="font-weight: 500; font-size: 1.3rem; text-align: center; width: 30rem;"><%= swipe.caption %></p>
-      <div class="col-3">
+      <p class="swipe-details-sub" style="font-weight: 500; font-size: 1.3rem;"><%= swipe.caption %></p>
+      <div class="col-3 btn-social">
         <div class="d-flex mt-1">
           <form style="margin-left: auto;" action="/swipe/likeSwipe/<%= swipe.id %>?_method=PUT" method="POST">
             <button class="btn mx-1" id="btn-signup" title="Like Swipe" style="font-size: 1.2rem; font-family: 'Open Sans', sans-serif;" type="submit"><i class="<%if(swipe.likes.includes(user.id)){ %> bi bi-hand-thumbs-up-fill <%} else { %> bi bi-hand-thumbs-up <% }%>" style="font-style: normal; font-weight: 500;"></i></button>
@@ -27,10 +27,10 @@
         </div>
       </div>
     </div>
-    <div class="flex mx-auto" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; width: fit-content;">
-      <img src="<%= swipe.image%>" style="object-fit: fill; max-width: 600px; max-height: 600px;" class="m-3" alt="Responsive image">
+    <div class="flex mx-auto swipe-img-holder" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; width: fit-content;">
+      <img src="<%= swipe.image%>" style="object-fit: fill; max-width: 600px; max-height: 600px;" class="swipe-img" alt="Responsive image">
     </div>
-    <div class="mt-5 w-50 mx-auto">
+    <div class="mt-5 commentbox mx-auto">
       <h2>Add a comment</h2>
       <form action="/comment/createComment/<%=swipe._id%>" method="POST">
         <div class="mb-3">
