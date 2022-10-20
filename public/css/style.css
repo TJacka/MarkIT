@@ -176,6 +176,7 @@ p.hero-sub {
 
 .card-img-top-img {
   max-height: 17rem;
+  min-height: 17rem;
   width: 100%;
 }
 
@@ -189,7 +190,6 @@ p.hero-sub {
 
 .swipe-img {
   width: 100%;
-  margin: 1rem;
 }
 
 .details-container{
@@ -280,8 +280,7 @@ p.hero-sub {
   }
 
   .swipe-img-holder {
-    padding: 1rem;
-    margin: 0 1rem;
+    padding: 3rem;
   }
 
   .details-container {
