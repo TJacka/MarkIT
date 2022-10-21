@@ -4,7 +4,7 @@ const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/addswipe");
+    return res.redirect("/allswipes");
   }
   res.render("login", {
     title: "Login",
@@ -48,7 +48,7 @@ exports.swipeLogin = (req, res, next) => {
         return next(err);
       }
       req.flash("success", { msg: "Success! You are logged in." });
-      res.redirect(req.session.returnTo || "/addswipe");
+      res.redirect(req.session.returnTo || "/allswipes");
     });
   })(req, res, next);
 };
@@ -67,7 +67,7 @@ exports.logout = (req, res) => {
 
 exports.getSignup = (req, res) => {
   if (req.user) {
-    return res.redirect("/addswipe");
+    return res.redirect("/allswipes");
   }
   res.render("signup", {
     title: "Create Account",
@@ -119,7 +119,7 @@ exports.swipeSignup = (req, res, next) => {
           if (err) {
             return next(err);
           }
-          res.redirect("/addswipe");
+          res.redirect("/allswipes");
         });
       });
     }

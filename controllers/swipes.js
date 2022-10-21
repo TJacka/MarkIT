@@ -68,11 +68,7 @@ module.exports = {
         userName: req.user.userName
       });
       console.log("Swipe has been added!");
-      if (req.user.swipes > 0) {
-        res.redirect("/allswipes");
-      } else {
-        res.redirect("/addswipe");
-      }
+      res.redirect("/myswipes");
     } catch (err) {
       console.log(err);
     }
