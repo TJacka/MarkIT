@@ -4,7 +4,7 @@
   <div class="flex"> 
     <div class="justify-content-between details-container">
       <div class="flex col-3 swipe-title">
-        <h1 class="mb-3" style="font-weight: 800; font-size: 2rem;"><%= swipe.title %></h1>
+        <h1 class="mb-3 swipe-title" style="font-weight: 800; font-size: 2rem;"><%= swipe.title %></h1>
         <div class="d-flex justify-content-between" style="width: 10rem;">
           <div class="badge bg-success" style="width: 4rem; height: 25px; padding-top: 6px; text-align: left;margin-right: 8px";>Likes: <%= swipe.likes.length - 1 %></div>
           <p>By: <%= swipe.userName %></p>
@@ -27,8 +27,8 @@
         </div>
       </div>
     </div>
-    <div class="flex mx-auto swipe-img-holder" style="box-shadow: 0 0 50px rgb(184, 183, 183); border-radius: 8px; border: 1px solid silver; width: max-content; padding: 1rem; max-width: 700px;">
-      <img src="<%= swipe.image%>" style="object-fit: fill; max-height: 600px; border-radius: 5px;" class="swipe-img mx-auto" alt="Responsive image">
+    <div class="flex mx-auto swipe-img-holder" style="box-shadow: 0 0 50px rgb(184, 183, 183); border-radius: 8px; border: 1px solid silver; padding: 1rem; max-width: 700px;">
+      <img src="<%= swipe.image%>" style="object-fit: fill; max-height:fit-content; border-radius: 5px;" class="swipe-img mx-auto" alt="Responsive image">
     </div>
     <div class="mt-5 commentbox mx-auto">
       <h2>Add a comment</h2>
@@ -50,7 +50,7 @@
                 <div>
                   <p class="mb-0 opacity-75"><%= comments[i].comment%></p>
                 </div>
-                <small class="badge opacity-50" style="padding-top: 6px; background: rgb(238, 180, 168); color: black;"><%= new Date().getDate(); %> / <%= new Date().getMonth(); %> / <%= new Date().getFullYear(); %></small>
+                <small class="badge opacity-50" style="padding-top: 6px; background: rgb(238, 180, 168); color: black; height: 25px;"><%= new Date().getDate(); %> / <%= new Date().getMonth(); %> / <%= new Date().getFullYear(); %></small>
               </div>
             </div>
           </li>

@@ -7,9 +7,9 @@
   <div class="container">
     <div class="d-flex row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xsm-1">
       <% for(let i=0; i<swipes.length; i++) {%>
-      <div class="col" style="margin-bottom: 13px">
-        <div id="card"  class="card h-100" style="margin-left: -5px; margin-right: -5px; box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver;">
-          <div class="card-img-top pt-2 px-2" style="max-height: 20rem;">
+      <div class="col card-holder-sm" style="margin-bottom: 13px">
+        <div id="card"  class="card h-100" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; max-width: 20rem;">
+          <div class="card-img-top pt-2 px-2" style="max-height: 20rem; min-height: 15rem;">
             <img src="<%= swipes[i].image%>" class ="card-img-top-img" style="object-fit: cover; border: 1px solid silver" alt="...">
           </div>
           <div class="card-body">

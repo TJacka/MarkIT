@@ -15,7 +15,7 @@ module.exports = {
   getSwipe: async (req, res) => {
     try {
       const swipe = await Swipe.findById(req.params.id);
-      const comments = await Comment.find({swipes: req.params.id}).sort({ createdAt: "desc" }).lean();
+      const comments = await Comment.find({swipe: req.params.id}).sort({ createdAt: "desc" }).lean();
       res.render("swipe.ejs", { swipe: swipe, user: req.user, comments: comments });
     } catch (err) {
       console.log(err);
