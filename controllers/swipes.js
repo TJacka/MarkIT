@@ -68,7 +68,11 @@ module.exports = {
         userName: req.user.userName
       });
       console.log("Swipe has been added!");
-      res.redirect("/allswipes");
+      if (req.user.swipes > 0) {
+        res.redirect("/allswipes");
+      } else {
+        res.redirect("/addswipe");
+      }
     } catch (err) {
       console.log(err);
     }
@@ -150,7 +154,7 @@ module.exports = {
         // Delete swipe from db
         await Swipe.remove({ _id: req.params.id });
         console.log("Deleted Swipe");
-        res.redirect("/allswipes");
+        res.redirect("/myswipes");
       } catch (err) {
         res.redirect("/allswipes");
       }
