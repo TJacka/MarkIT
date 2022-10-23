@@ -381,6 +381,11 @@ p.hero-sub {
     display: none;
   }
 
+  .logo-container {
+    margin-right: -8rem;
+
+  }
+
   .hero-heading {
     line-height: 3.5rem;
     font-weight: 900;
@@ -429,6 +434,15 @@ p.hero-sub {
 
   #card {
     margin: 0 auto;
+  }
+
+  .fixed-top {
+    position: static;
+    margin-bottom: -7rem;
+  }
+
+  .nav-auth {
+    position: fixed;
   }
  }
 
