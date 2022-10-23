@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const upload = require("../middleware/multer");
 const swipesController = require("../controllers/swipes");
-const { ensureAuth, ensureGuest } = require("../middleware/auth");
+const { ensureAuth } = require("../middleware/auth");
 
 //Swipe Routes
 router.get("/:id", ensureAuth, swipesController.getSwipe);

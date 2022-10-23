@@ -3,14 +3,14 @@ const router = express.Router();
 const authController = require("../controllers/auth");
 const homeController = require("../controllers/home");
 const swipesController = require("../controllers/swipes");
-const { ensureAuth, ensureGuest } = require("../middleware/auth");
+const { ensureAuth } = require("../middleware/auth");
 
 //Main Routes 
 router.get("/", homeController.getIndex);
 router.get("/home", ensureAuth, authController.getHome);
 router.get("/addswipe", ensureAuth, swipesController.addSwipe);
 router.get("/allswipes", ensureAuth, swipesController.getSwipes);
-router.get("/guestswipes", ensureGuest, swipesController.getFreeSwipes);
+router.get("/guestswipes", swipesController.getFreeSwipes);
 router.get("/favswipes", ensureAuth, swipesController.getFavSwipes);
 router.get("/myswipes", ensureAuth, swipesController.getUserSwipes);
 router.get("/login", authController.getLogin);
