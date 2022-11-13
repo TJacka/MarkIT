@@ -315,11 +315,19 @@ p.hero-sub {
     left: 65%;
     top: 8rem;
   }
+
+  .image-sm {
+    margin-top: 7rem;
+  }
  }
 
  @media (max-width: 767.98px) { 
   #nav-logo {
     margin-right: 5rem;
+  }
+
+  .image-sm {
+    margin-top: 10rem;
   }
 
   .hero-heading {
