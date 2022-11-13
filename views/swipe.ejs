@@ -31,32 +31,34 @@
     <div class="flex mx-auto swipe-img-holder" style="box-shadow: 0 0 50px rgb(184, 183, 183); border-radius: 8px; border: 1px solid silver; padding: 1rem; max-width: 700px;">
       <img src="<%= swipe.image%>" style="object-fit: fill; max-height:fit-content; border-radius: 5px;" class="swipe-img mx-auto" alt="Responsive image">
     </div>
-    <div class="mt-5 commentbox mx-auto">
-      <h2>Add a comment</h2>
-      <form action="/comment/createComment/<%=swipe._id%>" method="POST">
-        <div class="mb-3">
-            <label for="title" class="form-label">Comment</label>
-            <input type="text" class="form-control" id="comment" name="comment">
-        </div>
-        <button type="submit" id="btn-loginpage" class="btn" >Submit</button>
-      </form>
-    </div>
-    <div style="margin-top: 40px;">
-      <ul style="padding-left: 0;">
-        <% for(var i=0; i<comments.length; i++) {%>
-          <li class="col-6 justify-content-between mt-4" style="list-style: none; margin: 0 auto; border-radius: 5px;">
-            <div class="list-group-item d-flex gap-3 py-3">
-              <i class="bi bi-person-circle"></i>
-              <div class="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                  <p class="mb-0 opacity-75"><%= comments[i].comment%></p>
+    <div>
+      <div class="mt-5 commentbox mx-auto">
+        <h2>Add a comment</h2>
+        <form action="/comment/createComment/<%=swipe._id%>" method="POST">
+          <div class="mb-3">
+              <label for="title" class="form-label">Comment</label>
+              <input type="text" class="form-control" id="comment" name="comment">
+          </div>
+          <button type="submit" id="btn-loginpage" class="btn" >Submit</button>
+        </form>
+      </div>
+      <div class="mx-auto commentbox" style="margin-top: 40px;">
+        <ul style="padding-left: 0;">
+          <% for(var i=0; i<comments.length; i++) {%>
+            <li class="justify-content-between mt-4" style="list-style: none; border-radius: 5px;">
+              <div class="list-group-item d-flex gap-3 py-3">
+                <i class="bi bi-person-circle"></i>
+                <div class="d-flex gap-2 w-100 justify-content-between">
+                  <div>
+                    <p class="mb-0 opacity-75"><%= comments[i].comment%></p>
+                  </div>
+                  <small class="badge opacity-50" style="padding-top: 6px; background: rgb(238, 180, 168); color: black; height: 25px;"><%= new Date().getDate(); %> / <%= new Date().getMonth(); %> / <%= new Date().getFullYear(); %></small>
                 </div>
-                <small class="badge opacity-50" style="padding-top: 6px; background: rgb(238, 180, 168); color: black; height: 25px;"><%= new Date().getDate(); %> / <%= new Date().getMonth(); %> / <%= new Date().getFullYear(); %></small>
               </div>
-            </div>
-          </li>
-        <% } %>
-      </ul>
+            </li>
+          <% } %>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
