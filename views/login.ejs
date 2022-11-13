@@ -1,6 +1,6 @@
 <div style="height: 100vh; width: 100vw;">
   <%- include('partials/header') -%>
-    <main class="container flex row justify-content-center align-items-center m-auto signin-form" style="padding: 0 5px;">
+    <main class="container flex row justify-content-center align-items-center m-auto signin-form" style="padding: 5px 5px;">
         <section class="col-lg-6 col-md-10">
           <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
           <div class="alert alert-danger"><%= el.msg %></div>
