@@ -1,65 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MarkIT</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="markwhitebg.png" style="border-radius: 5px;"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/style.css" />
-  </head>
-  <body class="d-flex h-100s">
-    <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-      <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow nav-auth" style="background-color: rgb(249, 239, 239);">
-        <div class="container">
-          <a class="navbar-brand p-0" href="/home">
-            <img src="../mark.png" alt="" width="65" height="65">
-          </a>
-          <h4 id="welcome" class="navbar-text mt-2 mx-3" style="font-weight: 600; text-align: center;">Welcome, <%= user.userName %>!</h4>  
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>  
-              <div class="flex navbar-collapse justify-content-end">
-                <a class="nav-link active" style="font-weight: 600; font-size: 1.1rem; text-align: center;" href="/addswipe">Add Swipe</a>
-                <a class="nav-link active" style="font-weight: 600; font-size: 1.1rem; text-align: center;" aria-current="page" href="/myswipes">My Swipes</a>
-                <a class="nav-link active" style="font-weight: 600; font-size: 1.1rem; text-align: center;" aria-current="page" href="/favswipes">Fav Swipes</a>
-                <a class="nav-link active" style="font-weight: 600; font-size: 1.1rem; text-align: center;" aria-current="page" href="/allswipes">All Swipes</a>
-                <a href="/logout" class="btn btn-danger btn-nav" role="button" style="margin-left: 1rem; font-weight: 600;">Logout</a>
-              </div>
-            </div>
+<div style="height: 100vh; width: 100vw;">
+  <%- include('partials/headerauthin') -%>
+    <div class="container col-xxl-8 px-4 py-5 card-container m-auto">
+      <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5">
+        <div class="col-10 col-sm-8 col-lg-6">
+          <img src="/imgs/heroimage.png" class="d-block mx-lg-auto mx-auto img-fluid" alt="Bootstrap Themes" width="600" height="400" loading="lazy">
         </div>
-      </nav>
-  <div class="container col-xxl-8 px-4 py-5 card-container">
-    <div class="row flex-lg-row-reverse align-items-center justify-content-center g-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="/imgs/heroimage.png" class="d-block mx-lg-auto mx-auto img-fluid" alt="Bootstrap Themes" width="600" height="400" loading="lazy">
-      </div>
-      <div class="col-lg-6">
-        <h1 class="display-1 mb-3 justify-content-md-center hero-heading" style="font-weight: 900;">The Ultimate Swipe File Collection</h1>
-        <p class="lead hero-sub">See what's hot, keep track of your favorite inspo, & organize it all into categories of your choice!</p>
-        <div class="d-grid gap-2 d-md-flex ">
-          <a href="/signup" type="button" style="border-radius: 5px;" class="btn btn-hero">
-            Start swiping now!
-          </a>
+        <div class="col-lg-6">
+          <h1 class="display-1 mb-3 justify-content-md-center hero-heading" style="font-weight: 900;">The Ultimate Swipe File Collection</h1>
+          <p class="lead hero-sub">See what's hot, keep track of your favorite inspo, & organize it all into categories of your choice!</p>
+          <div class="d-grid gap-2 d-md-flex fill-button" id="btn-special">
+            <a href="/signup" type="button" class="btn btn-hero">
+              Start swiping now!
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-
   <%- include('partials/footer') -%>
+</div>

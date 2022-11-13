@@ -1,39 +1,39 @@
-<%- include('partials/headerauthin') -%>
-
-<div class="container card-container">
-  <div class="d-flex align-items-start justify-content-between flex-wrap mb-4">
-    <h1 class="mb-4" style="font-weight: 700; margin-left: 10px;">My Swipes</h1>
-  </div>
-  <div class="container">
-    <div class="d-flex row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xsm-1">
-      <% for(let i=0; i<swipes.length; i++) {%>
-      <div class="col card-holder-sm" style="margin-bottom: 13px">
-        <div id="card"  class="card h-100" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; max-width: 20rem;">
-          <div class="card-img-top pt-2 px-2" style="max-height: 20rem; min-height: 15rem;">
-            <img src="<%= swipes[i].image%>" class ="card-img-top-img" style="object-fit: cover; border: 1px solid silver" alt="...">
-          </div>
-          <div class="card-body">
-            <div class="d-flex flex-column justify-content-evenly align-items-center" style="height: 10rem; overflow-y: auto; margin-right: -5px; text-align: center;">
-              <h5 class="card-title" style="font-weight: 700;"><%= swipes[i].title%></h5>
-              <p class="card-text;"><%= swipes[i].caption %></p>
-            </div>
-            <div>
-              <hr style="margin-top: -1px;">
-              <div class="d-flex justify-content-center">
-                <a href="/swipe/<%= swipes[i]._id%>" class="btn w-100" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
+<div style="width: 100vw; height: 100vh;">
+  <%- include('partials/headerauthin') -%>
+    <div class="container card-container mb-auto">
+      <div class="d-flex align-items-start justify-content-between flex-wrap">
+        <h1 class="mb-4" style="font-weight: 700; margin-left: 10px;">My Swipes</h1>
+      </div>
+      <div class="container">
+        <div class="d-flex row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-xsm-1">
+          <% for(let i=0; i<swipes.length; i++) {%>
+          <div class="col card-holder-sm" style="margin-bottom: 13px">
+            <div id="card"  class="card h-100" style="box-shadow: 0 0 30px rgb(169, 169, 169); border-radius: 8px; border: 1px solid silver; max-width: 20rem;">
+              <div class="card-img-top pt-2 px-2" style="max-height: 20rem; min-height: 15rem;">
+                <img src="<%= swipes[i].image%>" class ="card-img-top-img" style="object-fit: cover; border: 1px solid silver" alt="...">
+              </div>
+              <div class="card-body">
+                <div class="d-flex flex-column justify-content-evenly align-items-center" style="height: 10rem; overflow-y: auto; margin-right: -5px; text-align: center;">
+                  <h5 class="card-title" style="font-weight: 700;"><%= swipes[i].title%></h5>
+                  <p class="card-text;"><%= swipes[i].caption %></p>
+                </div>
+                <div>
+                  <hr style="margin-top: -1px;">
+                  <div class="d-flex justify-content-center">
+                    <a href="/swipe/<%= swipes[i]._id%>" class="btn w-100" id="btn-viewswipe" style="border-radius: 5px;">View Swipe</a>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer d-flex justify-content-between">
+                <span class="badge bg-success" style="padding-top: 5px;"><%= swipes[i].category%>Likes: <%= swipes[i].likes.length-1%></span>
+                <span style="font-size: 0.8rem; letter-spacing: 0;"><small class="badge opacity-50 px-1" style="padding-top: 4px; padding-bottom: 4px; background: rgb(240, 200, 200); color: black; font-size: 0.8rem; font-weight: 500;"><%= new Date().getDate(); %>/<%= new Date().getMonth(); %>/<%= new Date().getFullYear(); %></small></span>
               </div>
             </div>
           </div>
-          <div class="card-footer d-flex justify-content-between">
-            <span class="badge bg-success" style="padding-top: 5px;"><%= swipes[i].category%>Likes: <%= swipes[i].likes.length-1%></span>
-            <span style="font-size: 0.8rem; letter-spacing: 0;"><small class="badge opacity-50 px-1" style="padding-top: 4px; padding-bottom: 4px; background: rgb(240, 200, 200); color: black; font-size: 0.8rem; font-weight: 500;"><%= new Date().getDate(); %>/<%= new Date().getMonth(); %>/<%= new Date().getFullYear(); %></small></span>
-          </div>
+          <% } %>
         </div>
       </div>
-      <% } %>
     </div>
-  </div>
+  <%- include('partials/footer') -%>
 </div>
-      
-<%- include('partials/footer') -%>
 

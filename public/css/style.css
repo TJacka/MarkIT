@@ -2,7 +2,6 @@
 
 html,
 body {
-    height: 100%;
     font-size: 1rem;
     font-family: 'Lexend Deca', sans-serif;
     letter-spacing: -0.75px;
@@ -331,7 +330,7 @@ p.hero-sub {
   }
 
   #btn-guest {
-    margin-right: 0rem;
+    display: none;
   }
 
   .btn-hero {
@@ -398,7 +397,7 @@ p.hero-sub {
   }
 
   #btn-guest {
-    margin-right: 1rem;
+    display: none;
   }
 
   .btn-hero {
