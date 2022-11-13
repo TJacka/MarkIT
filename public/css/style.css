@@ -328,6 +328,7 @@ p.hero-sub {
 
   .image-sm {
     margin-top: 7rem;
+    margin-bottom: -2rem;
   }
 
   .hero-heading {
