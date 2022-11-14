@@ -331,7 +331,7 @@ p.hero-sub {
   }
 
   .image-sm {
-    margin-top: 9rem;
+    margin-top: 7rem;
     margin-bottom: -2rem;
   }
 
@@ -454,6 +454,10 @@ p.hero-sub {
 
   .nav-auth {
     position: fixed;
+  }
+
+  p.hero-sub {
+    font-size: 0.95rem;
   }
  }
 
